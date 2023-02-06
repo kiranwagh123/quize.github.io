@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz game Application</title>
+</head>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* span{
+        color: rgb(10, 229, 138);
+    } */
+    body{
+        /* background-color: rgb(74, 134, 154); */
+        background-image: url(https://wallpaperaccess.com/full/187161.jpg);
+        /* background-repeat: no-repeat; */
+       
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        /* background-color: #111; */
+        
+    }
+    .card1{
+
+        background-color: #101010;
+        height: 460px;
+        width: 300px;
+        margin: 50px;
+        text-align: center;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px red;
+        transition: 0.9s;
+        /* background: transparent; */
+      
+    }
+    .card1:hover{
+        transform: scale(1.1);
+        /* background-color: rgb(22, 21, 21); */
+    }
+    .text{
+
+        font-size: 22px;
+        color: rgb(255, 255, 245);;
+        font-weight: bolder;
+        
+    }
+    #input1{
+        display: flex;
+        padding: 10px 40px ;
+        position: relative;
+        top: 40px;
+        border-radius: 10px;
+        height: 6vh;
+        font-weight: bolder;
+       
+
+    }
+    #inputcss1{
+        display: flex;
+        padding: 10px 40px ;
+        position: relative;
+        top: 40px;
+        border-radius: 10px;
+        height: 6vh;
+        font-weight: bolder;
+    }
+    #inputcdn1{
+        display: flex;
+        padding: 10px 40px ;
+        position: relative;
+        top: 40px;
+        border-radius: 10px;
+        height: 6vh;
+        font-weight: bolder;
+    }
+       
+
+   
+    .button1{
+
+        /* display: flex; */
+        height: 40px;
+        width: 130px;
+        color: black;
+        position: relative;
+        top: 60px;
+        border-radius: 8px;
+        background-color: rgb(34, 64, 109);
+        color: white;
+        transition: 0.9s;
+    }
+    .button1:hover{
+        background-color: green;
+        color: white;
+        transform: scale(0.9);
+    }
+
+    #access3{
+
+        padding: 5px 20px;
+        border-radius: 7px;
+        background-color: rgb(128, 141, 160);
+        transition: 0.9s;
+        color: rgb(17, 16, 16);
+    }
+    #access3:hover{
+        background-color:rgb(255, 53, 38);
+        transform: scale(0.9);
+    
+        
+    }
+
+    #accesscss3{
+        padding: 5px 20px;
+        border-radius: 7px;
+        background-color: rgb(128, 141, 160);
+        transition: 0.9s;
+        color: rgb(22, 22, 22);
+    }
+    #accesscss3:hover{
+        background-color: rgb(255, 38, 23);
+        transform: scale(0.9);
+    }
+    #accesscdn3{
+        padding: 5px 20px;
+        border-radius: 7px;
+        background-color: rgb(128, 141, 160);
+        transition: 0.9s;
+        color: rgb(10, 10, 10);
+    }
+    #accesscdn3:hover{
+        background-color: rgb(255, 44, 29);
+        transform: scale(0.9);
+    }
+       
+       
+
+        
+    .popup{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+
+
+
+    .popup{
+        color: rgb(8, 189, 20);
+        font-size: 0px;
+        visibility: hidden;
+        transition: 0.8s;
+        
+      
+    }
+    .open-popup{
+        font-size: 23px;
+        visibility: visible;
+        color: rgb(8, 189, 20);
+        font-weight: bolder;
+      
+    }
+    .open-popup2{
+        font-size: 20px;
+        visibility: visible;
+        color: red;
+        font-weight: bolder;
+    }
+    .open-popup3{
+
+        visibility: hidden;
+    }
+    .refreshbtn{
+
+        font-size: 20px;
+        display: flex;
+        margin-top: 10px;
+        margin-left: 75px;
+         /* border-radius: 20px; */
+        visibility: hidden;
+    }
+    .refresh-btnopen{
+
+        visibility: visible;
+        
+        font-size: 20px;
+        display: flex;
+        margin-top: 10px;
+        margin-left: 75px;
+        border: 1px solid black;
+        /* border-radius: 8px; */
+        /* background-color: aqua ; */
+    }
+    .spanpoup{
+        visibility: hidden;
+        transition: 0.9s;
+    }
+      
+    .span-poup{
+        visibility: visible;
+        transition: 0.9s;
+    }
+    .spansuccess{
+
+        margin-left: -110px;
+        visibility: hidden;
+
+    }
+    .span-success{
+
+        margin-left: -110px;
+        visibility: visible;
+    }
+    #next{
+
+       position: relative;
+       top: 650px;
+       left: 1140px;
+       font-size: 30px;
+       padding: 3px 40px;
+       border-radius: 10px;
+       background-color:whitesmoke;
+       transition: 0.9s;
+    }
+    #next:hover{
+
+        background-color: black;
+        color: white;
+        transform: scale(0.9);
+    }
+   
+    
+   
+    
+
+
+</style>
+<body onload="letsStart()">
+    
+    <form action="./QuestionQuizpage2.html">
+
+        <button id="next" onclick="nextPage()">Next</button>
+    </form>
+    
+  
+
+
+    </body>
+    
+    <section class="container">
+        
+                       <!-- --------------------------section card 1 start ------------------------->
+         <form>
+
+             <div class="card1">
+                 
+            
+            <div class="cardinfo"> </div>
+
+            <label id="lable1" class=text>Q1)Whats is full form of HTML?</label>
+            <input class="mt-4" type="text" name="input" id="input1" autocomplete="off" required>
+            
+            <input type="button" onclick="validation()" value="Submit" class="button1"><br><br><br><br><br>
+            
+            <span id="access" class="popup"> CORRECT ANSWER</span>
+            <span id="access2" class="popup" > INCORRECT ANSWER</span><br>
+            
+            <span  id="span3" class="spanpoup"><br>
+                <img src="https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-wrong-button-in-red-png-image_6106324.png"   height="100px" width="100px"  >
+            </span>
+
+            <span id="span4" class="spansuccess">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_correct.png" height="100px" width="100px">
+            </span><br><br>
+            
+            <button id="access3"  class="refreshbtn" onclick="refreshbtn()">Re-try</button>
+            <!-- <input type="button" value="Re-try" class="refreshbtn" id="access3" onclick="refreshbtn()"> -->
+            
+        </div>
+                          <!------------------------- section card 1 ENDS ------------------------------->
+        
+    </form>  
+               <!--------------------------------- section card 2 start ---------------------------->
+     <div class="container2">
+            <form action="">
+
+                  <div class="card1">
+                    
+            <div class="cardinfo"> </div>
+
+            <label id="lable1" class=text>Q2)Whats is full form of CSS?</label>
+            <input class="mt-4" type="text" name="input" id="inputcss1" autocomplete="off" required>
+            
+            <input type="button" onclick="secondButton()" value="Submit" class="button1"><br><br><br><br><br>
+            
+            <span id="accesscss" class="popup"> CORRECT ANSWER</span>
+            <span id="accesscss2" class="popup" > INCORRECT ANSWER</span><br>
+            
+            <span  id="spancss3" class="spanpoup"><br>
+                <img src="https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-wrong-button-in-red-png-image_6106324.png"   height="100px" width="100px"  >
+            </span>
+
+            <span id="spancss4" class="spansuccess">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_correct.png" height="100px" width="100px">
+            </span><br><br>
+            
+            <button id="accesscss3"  class="refreshbtn" onclick="refreshButton()">Re-try</button>
+                    
+                  </div>       
+            </form>
+                
+       </div>     
+               <!-- ------------------------------section card 2 end ---------------------------->
+               
+               
+               
+               <!------------------------------------ section card 3 start --------------------------------->
+       <div class="container3">
+
+            <form action="">
+
+                <div class="card1">
+                    
+             <div class="cardinfo"> </div>
+
+            <label id="lable1" class=text>Q3)Whats is full form of JS?</label>
+            <input class="mt-4" type="text" name="input" id="inputcdn1" autocomplete="off" required>
+            
+            <input type="button" onclick="thirdButton()" value="Submit" class="button1"><br><br><br><br><br>
+            
+            <span id="accesscdn" class="popup"> CORRECT ANSWER</span>
+            <span id="accesscdn2" class="popup" > INCORRECT ANSWER</span><br>
+            
+            <span  id="spancdn3" class="spanpoup"><br>
+                <img src="https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-wrong-button-in-red-png-image_6106324.png"   height="100px" width="100px"  >
+            </span>
+
+            <span id="spancdn4" class="spansuccess">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_correct.png" height="100px" width="100px">
+            </span><br><br>
+            
+            <button id="accesscdn3"  class="refreshbtn" onclick="refreshcdnButton()">Re-try</button>
+                    
+                </div>
+                
+            </form>
+
+        </div>        
+            <!-- ----------------------------------------section card 3 end ------------------------------------------->
+
+</section>
+
+
+      <script>
+
+       
+
+        //-------------------------------- first card js start -----------------
+        
+        var popup = document.getElementById("access")      //to create using for popup animation purpose--------
+        var popup2 = document.getElementById("access2")
+        var popup3 = document.getElementById("access3")
+        var popup4 = document.getElementById("span3")            //shoe wronge img in popup
+        var popup5 = document.getElementById("span4") 
+
+
+
+
+        value = "HYPER TEXT MARKUP LANGUAGE"                    // in two variable value is store correct ans-------
+        value2 = "Hyper Text Markup Language"
+
+
+
+        function validation(){                                  // button function start----------------------
+            
+            var inputvalue = document.getElementById("input1").value;
+            
+            if(inputvalue == value){
+                
+                document.getElementById("access").innerHTML;
+                popup.classList.add("open-popup")                        
+                popup5.classList.add("span-success")                        //shoe correct img in popup   
+                
+            }
+        else if(inputvalue == value2){
+
+            document.getElementById("access").innerHTML;
+            popup.classList.add("open-popup")
+            popup5.classList.add("span-success")                           //shoe correct img in popup
+           
+        }
+        else if(inputvalue == ""){
+
+            document.getElementById("access").innerHTML;                     
+           
+        }
+
+       
+        else{
+            document.getElementById("access2").innerHTML;
+            popup2.classList.add("open-popup2")
+            popup3.classList.add("refresh-btnopen")
+            popup4.classList.add("span-poup")                                //shoe wronge img in popup    
+            
+           
+        }
+        
+       }
+
+       function refreshbtn(){
+           
+           document.getElementById("input1").innerHTML=""
+           document.getElementById("access2").innerHTML=""
+           document.getElementById("span3").innerHTML=""
+           popup3.classList.remove("refresh-btnopen");
+        }
+        
+        //-------------------------------- first card js ends -----------------
+
+       //   ------------------------------------- second card js sta--------------------------------------
+       
+        var popupcss = document.getElementById("accesscss")             // correct ans show in text
+        var popupcss2 = document.getElementById("accesscss2")           // incorrect ans show in text
+        var popupcss3 = document.getElementById("accesscss3")           // show refresh button
+        var popupcss4 = document.getElementById("spancss3")             // show  wronge popup
+        var popupcss5 = document.getElementById("spancss4")              //show  correct popup
+
+
+        valuecss = "CASCADING STYLE SHEET";                               //coeecrt ans
+        valuecss2 = "Cascading Style Sheet";                              //coeecrt ans
+
+
+        function secondButton(){
+
+            var inputcssvalue = document.getElementById("inputcss1").value;
+
+            if(inputcssvalue == valuecss){
+
+                document.getElementById("accesscss").innerHTML;
+                popupcss.classList.add("open-popup");
+                popupcss5.classList.add("span-success");
+            }
+
+            else if(inputcssvalue == valuecss2){
+                
+                document.getElementById("accesscss").innerHTML;
+                popupcss.classList.add("open-popup");
+                popupcss5.classList.add("span-success");
+                
+            }
+            else if(inputcssvalue == ""){
+                
+                document.getElementById("accesscss").innerHTML;
+            }
+            
+            else{
+                
+                document.getElementById("accesscss2").innerHTML;
+                popupcss2.classList.add("open-popup2");
+                popupcss3.classList.add("refresh-btnopen");
+                popupcss4.classList.add("span-poup");
+                
+            }
+            
+        }
+        
+        function refreshButton(){
+            
+            document.getElementById("inputcss1").innerHTML=""
+            document.getElementById("accesscss2").innerHTML=""
+            document.getElementById("spancss3").innerHTML=""
+            popupcss3.classList.remove("refresh-btnopen")
+        }
+        
+       //   ------------------------------- second card js start-------------------
+       
+       //   ------------------------------------ third card js start-------------------
+       
+       var popupcdn = document.getElementById("accesscdn")             // correct ans show in text
+        var popupcdn2 = document.getElementById("accesscdn2")           // incorrect ans show in text
+        var popupcdn3 = document.getElementById("accesscdn3")           // show refresh button
+        var popupcdn4 = document.getElementById("spancdn3")             // show  wronge popup
+        var popupcdn5 = document.getElementById("spancdn4")              //show  correct popup
+
+
+        valuecdn = "JAVASCRIPT";                               //coeecrt ans
+        valuecdn2 = "JavaScript";                              //coeecrt ans
+
+
+        function thirdButton(){
+
+            var inputcdnvalue = document.getElementById("inputcdn1").value;
+
+            if(inputcdnvalue == valuecdn){
+
+                document.getElementById("accesscdn").innerHTML;
+                popupcdn.classList.add("open-popup");
+                popupcdn5.classList.add("span-success");
+            }
+
+            else if(inputcdnvalue == valuecdn2){
+                
+                document.getElementById("accesscdn").innerHTML;
+                popupcdn.classList.add("open-popup");
+                popupcdn5.classList.add("span-success");
+                
+            }
+            else if(inputcdnvalue == ""){
+                
+                document.getElementById("accesscdn").innerHTML;
+            }
+            
+            else{
+                
+                document.getElementById("accesscdn2").innerHTML;
+                popupcdn2.classList.add("open-popup2");
+                popupcdn3.classList.add("refresh-btnopen");
+                popupcdn4.classList.add("span-poup");
+                
+            }
+            
+        }
+        
+        function refreshcdnButton(){
+            
+            document.getElementById("inputcdn1").innerHTML=""
+            document.getElementById("accesscdn2").innerHTML=""
+            document.getElementById("spancdn3").innerHTML=""
+            popupcdn3.classList.remove("refresh-btnopen")
+        }
+       
+       //  --------------------------------------  third card js  ends---------------------------------------------
+       
+       </script>
+
+
+
+    
+</body>
+</html>
